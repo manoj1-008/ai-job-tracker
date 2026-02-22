@@ -9,7 +9,7 @@ import Analyzer from "./pages/Analyzer";
 import Matcher from "./pages/Matcher";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
-
+import { Routes, Route, Navigate } from "react-router-dom";
 function App() {
   return (
     <Routes>
