@@ -13,14 +13,15 @@ import Layout from "./components/Layout";
 function App() {
   return (
     <Routes>
-      {/* Default Route */}
+
+      {/* Redirect root */}
       <Route path="/" element={<Navigate to="/login" />} />
 
       {/* Public */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
 
-      {/* Protected with Layout */}
+      {/* Protected */}
       <Route
         path="/dashboard"
         element={
@@ -66,6 +67,10 @@ function App() {
       />
 
       <Route path="/matcher" element={<Matcher />} />
+
+      {/* Fallback */}
+      <Route path="*" element={<Navigate to="/login" />} />
+
     </Routes>
   );
 }
