@@ -1,0 +1,10 @@
+const express = require("express");
+const { uploadResume } = require("../controllers/resumeController");
+const { protect } = require("../middleware/authMiddleware");
+const upload = require("../middleware/uploadMiddleware");
+
+const router = express.Router();
+
+router.post("/", protect, upload.single("resume"), uploadResume);
+
+module.exports = router;
