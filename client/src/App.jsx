@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -9,10 +9,13 @@ import Analyzer from "./pages/Analyzer";
 import Matcher from "./pages/Matcher";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";
-import { Routes, Route, Navigate } from "react-router-dom";
+
 function App() {
   return (
     <Routes>
+      {/* Default Route */}
+      <Route path="/" element={<Navigate to="/login" />} />
+
       {/* Public */}
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
@@ -61,6 +64,7 @@ function App() {
           </ProtectedRoute>
         }
       />
+
       <Route path="/matcher" element={<Matcher />} />
     </Routes>
   );
